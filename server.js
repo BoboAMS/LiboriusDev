@@ -5,6 +5,8 @@ import fastifyFormbody from "@fastify/formbody";
 import fastifyStatic from "@fastify/static";
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
+const host = ("RENDER" in process.env) ? `0.0.0.0` : `localhost`;
+
 
 
 
@@ -147,14 +149,11 @@ fastify.post('/api/contact', async (request, reply) => {
 });
 
 // Démarrage du serveur
-const start = async () => {
-  try {
-    await fastify.listen({ port: 3000 });
-    fastify.log.info(`Server listening on ${fastify.server.address().port}`);
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
+fastify.listen({host: host, port: 3000 }, function (err, address) {
+  if (err) {
+    app.log.error(err)
+    process.exit(1)
   }
-};
+})
 
-start();
+
