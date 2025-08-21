@@ -722,7 +722,7 @@
     <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="photo-profil">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Photo de LiboriusDev">
+            <img src="dev.png" alt="Photo de LiboriusDev">
         </div>
         <div class="hero-content">
             <h2>Développeur <span>Fullstack</span> Passionné</h2>
@@ -777,7 +777,7 @@
     <section id="portfolio">
         <h2>Mes Réalisations</h2>
         <div class="portfolio-item">
-            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="MiaTpNotes - Gestion de notes de TP" class="portfolio-img">
+            <img src="c.png" alt="MiaTpNotes - Gestion de notes de TP" class="portfolio-img">
             <div class="portfolio-content">
                 <h3>MiaTpNotes</h3>
                 <p>Plateforme de gestion et consultation des notes de TP pour la Faculté des Sciences et Techniques de l'Université d'Abomey-Calavi.</p>
@@ -828,10 +828,7 @@
                         <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js">
                         <span>Node.js</span>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://www.svgrepo.com/show/354342/fastify.svg" alt="Fastify">
-                        <span>Fastify</span>
-                    </div>
+                    
                     <div class="skill-item">
                         <img src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" alt="Supabase">
                         <span>Supabase</span>
@@ -905,7 +902,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" methode="POST" action="/api/contact">
                     <div class="form-group">
                         <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name" required>
@@ -995,7 +992,7 @@
 
         // Form submission with animation
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+            //e.preventDefault();
             
             const submitBtn = this.querySelector('.submit-btn');
             const btnText = submitBtn.querySelector('.btn-text');
