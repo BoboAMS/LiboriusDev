@@ -1,11 +1,10 @@
 {
-  "name": "fastmiatpnotes24-25",
+  "name": "LiboriusDev",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch src/index.js"
+    "dev": "node server.js"
   },
   "keywords": [],
   "author": "",
