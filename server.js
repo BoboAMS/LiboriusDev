@@ -126,7 +126,7 @@ const emailTemplate = (data) => `
 `;
 
 fastify.get('/', async (req, res)=>{
-  return res.redirect('libodev.html')
+  return res.redirect('index.html')
 })
 // Route pour traiter le formulaire de contact
 fastify.post('/api/contact', async (request, reply) => {
