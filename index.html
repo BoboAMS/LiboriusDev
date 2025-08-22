@@ -274,6 +274,62 @@
             color: var(--gray);
         }
         
+        /* Téléservices Section */
+        .teleservices {
+            background: var(--dark-light);
+            border-radius: 15px;
+            margin: 2rem auto;
+        }
+        
+        .teleservices-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .teleservices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .teleservice-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .teleservice-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .teleservice-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .teleservice-content {
+            padding: 1.5rem;
+        }
+        
+        .teleservice-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .teleservice-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
         /* Video Section */
         .video-section {
             background: var(--dark-light);
@@ -447,6 +503,78 @@
             font-size: 0.9rem;
         }
         
+        /* Websites Section */
+        .websites-section {
+            background: var(--dark-light);
+            border-radius: 15px;
+            margin: 2rem auto;
+        }
+        
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .website-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .website-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .website-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .website-content {
+            padding: 1.5rem;
+        }
+        
+        .website-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .website-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ComeUp Section */
+        .comeup-section {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 15px;
+            margin: 2rem auto;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        
+        .comeup-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comeup-content h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comeup-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
         /* Contact Section */
         .contact-container {
             display: grid;
@@ -609,6 +737,90 @@
             background-color: var(--error);
         }
         
+        /* Modal Dialog */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--dark-light);
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .modal-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-header h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .modal-body {
+            margin-bottom: 2rem;
+            color: var(--gray);
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+        
+        /* Trigger Button */
+        .trigger-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        
+        .trigger-button:hover {
+            transform: scale(1.1);
+        }
+        
         /* Footer */
         footer {
             background: var(--dark-light);
@@ -691,6 +903,10 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .modal-content {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -708,9 +924,11 @@
             <div class="nav-links">
                 <a href="#about">À propos</a>
                 <a href="#services">Services</a>
+                <a href="#teleservices">Téléservices</a>
                 <a href="#video">Vidéo</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#skills">Compétences</a>
+                <a href="#websites">Sites Web</a>
                 <a href="#contact">Contact</a>
             </div>
             <button class="menu-toggle">
@@ -762,6 +980,50 @@
         </div>
     </section>
 
+    <!-- Téléservices Section -->
+    <section id="teleservices" class="teleservices">
+        <h2>Mes Compétences en Téléservices</h2>
+        <p class="teleservices-intro">En plus de mes compétences en développement web, je propose également des services de téléservices de qualité pour répondre à vos besoins administratifs et de support à distance.</p>
+        
+        <div class="teleservices-grid">
+            <div class="teleservice-card">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Téléconseiller" class="teleservice-img">
+                <div class="teleservice-content">
+                    <h3>Téléconseiller</h3>
+                    <p>Service client à distance, gestion des appels entrants et sortants, support et conseil aux clients.</p>
+                    <a href="#contact" class="cta">Me contacter</a>
+                </div>
+            </div>
+            
+            <div class="teleservice-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Télésécrétaire" class="teleservice-img">
+                <div class="teleservice-content">
+                    <h3>Télésécrétaire</h3>
+                    <p>Gestion administrative à distance, prise de rendez-vous, classement de documents, organisation d'agenda.</p>
+                    <a href="#contact" class="cta">Me contacter</a>
+                </div>
+            </div>
+            
+            <div class="teleservice-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Agent de saisie" class="teleservice-img">
+                <div class="teleservice-content">
+                    <h3>Agent de Saisie de Données</h3>
+                    <p>Saisie et traitement de données, mise à jour de bases de données, numérisation de documents.</p>
+                    <a href="#contact" class="cta">Me contacter</a>
+                </div>
+            </div>
+            
+            <div class="teleservice-card">
+                <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Gestion CRM" class="teleservice-img">
+                <div class="teleservice-content">
+                    <h3>Gestion de CRM</h3>
+                    <p>Gestion de la relation client, suivi des leads, mise à jour des fiches clients, automatisation marketing.</p>
+                    <a href="#contact" class="cta">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Section -->
     <section id="video" class="video-section">
         <h2>Présentation Vidéo</h2>
@@ -777,7 +1039,7 @@
     <section id="portfolio">
         <h2>Mes Réalisations</h2>
         <div class="portfolio-item">
-            <img src="c.png" alt="MiaTpNotes - Gestion de notes de TP" class="portfolio-img">
+            <img src="c.png" class="portfolio-img">
             <div class="portfolio-content">
                 <h3>MiaTpNotes</h3>
                 <p>Plateforme de gestion et consultation des notes de TP pour la Faculté des Sciences et Techniques de l'Université d'Abomey-Calavi.</p>
@@ -868,6 +1130,39 @@
         </div>
     </section>
 
+    <!-- Websites Section -->
+    <section id="websites" class="websites-section">
+        <h2>Mes Sites Web</h2>
+        <div class="websites-grid">
+            <div class="website-card">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="LiboriusDev" class="website-img">
+                <div class="website-content">
+                    <h3>LiboriusDev</h3>
+                    <p>Mon site web personnel présentant mes services de développement web fullstack, mes compétences et mes réalisations.</p>
+                    <a href="#" class="cta">Visiter le site</a>
+                </div>
+            </div>
+            
+            <div class="website-card">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Chic Étudiant" class="website-img">
+                <div class="website-content">
+                    <h3>Chic Étudiant</h3>
+                    <p>Plateforme e-commerce destinée aux étudiants, proposant des vêtements de qualité à des prix abordables.</p>
+                    <a href="#" class="cta">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ComeUp Section -->
+    <section id="comeup" class="comeup-section">
+        <div class="comeup-content">
+            <h2>Mes Services sur ComeUp</h2>
+            <p>Je propose mes services de développement web sur la plateforme ComeUp. Spécialisé dans la création d'APIs REST performantes, rapides et sécurisées avec Node.js, ainsi que des interfaces frontend modernes avec HTML, CSS et JavaScript. J'allie rigueur mathématique et excellence technique pour répondre à vos besoins.</p>
+            <a href="https://mjt.5euros.com/lnk/AV8AAHb-h48AAAAAAAAAARAcGMQAAYCsfQcAAAAAAAaPRwBom4aIQFjqf3cDTA6zyToaRjWn1gAF1JY/3/pHUomnC8JyCxUiklN4jOFA/aHR0cHM6Ly9jb21ldXAuY29tL2ZyL3NlcnZpY2UvNDg1ODUyL2NyZWVyLWRlcy1zZXJ2aWNlcy1kZS1kZXZlbG9wcGVtZW50LXdlYi1vdS1sYS1yaWd1ZXVyLW1hdGhlbWF0aXF1ZS1yZW5jb250cmUtbGV4Y2VsbGVuY2UtdGVjaG5pcXVl" class="cta" target="_blank">Voir mon service ComeUp</a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contactez-moi</h2>
@@ -879,7 +1174,7 @@
                     </div>
                     <div class="contact-details">
                         <h4>Email</h4>
-                        <p>contact@liboriusdev.com</p>
+                        <p>amsnewtec@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-method">
@@ -888,7 +1183,7 @@
                     </div>
                     <div class="contact-details">
                         <h4>Téléphone</h4>
-                        <p>+229 XX XX XX XX</p>
+                        <p>+229 01 59 67 62 67</p>
                     </div>
                 </div>
                 <div class="contact-method">
@@ -902,7 +1197,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form id="contactForm" methode="POST" action="/api/contact">
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Nom complet</label>
                         <input type="text" id="name" name="name" required>
@@ -918,6 +1213,8 @@
                             <option value="site-web">Site Web</option>
                             <option value="api">API</option>
                             <option value="application">Application Web</option>
+                            <option value="teleservice">Téléservice</option>
+                            <option value="cours">Cours de Mathématiques</option>
                             <option value="autre">Autre</option>
                         </select>
                     </div>
@@ -937,6 +1234,44 @@
         </div>
     </section>
 
+    <!-- Modals -->
+    <div id="modalTeleservices" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>Services de Téléservices</h3>
+            </div>
+            <div class="modal-body">
+                <p>Besoin d'un soutien administratif à distance? Je propose des services de téléconseil, télésécrétariat, saisie de données et gestion de CRM. Des solutions efficaces pour optimiser votre temps et booster votre productivité!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="cta">Me contacter</a>
+                <button class="cta secondary close-modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalMath" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>Cours de Mathématiques à Domicile</h3>
+            </div>
+            <div class="modal-body">
+                <p>Renforcez vos compétences en mathématiques avec des cours particuliers adaptés à votre niveau. Alliant rigueur mathématique et pédagogie, je vous aide à maîtriser les concepts et à exceller dans cette discipline.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="cta">Me contacter</a>
+                <button class="cta secondary close-modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trigger Button -->
+    <button id="triggerModals" class="trigger-button">
+        <i class="fas fa-bullhorn"></i>
+    </button>
+
     <!-- Notification -->
     <div id="notification" class="notification">
         <i class="fas fa-check-circle"></i>
@@ -953,6 +1288,7 @@
             <div class="footer-links">
                 <a href="#about">À propos</a>
                 <a href="#services">Services</a>
+                <a href="#teleservices">Téléservices</a>
                 <a href="#video">Vidéo</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
@@ -992,7 +1328,7 @@
 
         // Form submission with animation
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            //e.preventDefault();
+            e.preventDefault();
             
             const submitBtn = this.querySelector('.submit-btn');
             const btnText = submitBtn.querySelector('.btn-text');
@@ -1038,6 +1374,75 @@
                 notification.classList.remove('show');
             }, 5000);
         }
+
+        // Modal functionality
+        const modals = document.querySelectorAll('.modal');
+        const modalTeleservices = document.getElementById('modalTeleservices');
+        const modalMath = document.getElementById('modalMath');
+        const triggerButton = document.getElementById('triggerModals');
+        
+        // Function to open a modal
+        function openModal(modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Function to close a modal
+        function closeModal(modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modals when clicking on close button or outside
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target.classList.contains('modal-close') || e.target.classList.contains('close-modal')) {
+                    closeModal(modal);
+                }
+            });
+        });
+        
+        // Trigger modals with the button
+        triggerButton.addEventListener('click', () => {
+            // Show teleservices modal first
+            openModal(modalTeleservices);
+            
+            // After 5 seconds, close teleservices and show math modal
+            setTimeout(() => {
+                closeModal(modalTeleservices);
+                setTimeout(() => {
+                    openModal(modalMath);
+                }, 300);
+            }, 5000);
+        });
+        
+        // Show modals on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                openModal(modalTeleservices);
+                
+                // After 5 seconds, close teleservices and show math modal
+                setTimeout(() => {
+                    closeModal(modalTeleservices);
+                    setTimeout(() => {
+                        openModal(modalMath);
+                    }, 300);
+                }, 5000);
+            }, 2000);
+        });
+        
+        // Show modals every 3 minutes
+        setInterval(() => {
+            openModal(modalTeleservices);
+            
+            // After 5 seconds, close teleservices and show math modal
+            setTimeout(() => {
+                closeModal(modalTeleservices);
+                setTimeout(() => {
+                    openModal(modalMath);
+                }, 300);
+            }, 5000);
+        }, 180000); // 3 minutes = 180000 milliseconds
     </script>
 </body>
 </html>
