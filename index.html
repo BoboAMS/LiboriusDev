@@ -18,6 +18,9 @@
             --gray: #94a3b8;
             --success: #10b981;
             --error: #ef4444;
+            --python: #3776AB;
+            --cpp: #00599C;
+            --math: #FF6B6B;
         }
         
         * {
@@ -32,13 +35,12 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
-            font-size: 16px;
         }
         
         /* Header & Navigation */
         header {
             background: linear-gradient(135deg, var(--accent), var(--secondary));
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 0;
             text-align: center;
             position: relative;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -46,20 +48,20 @@
         
         header h1 {
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
         
         header p {
             margin: 0.5rem 0 0;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             opacity: 0.9;
         }
         
         nav {
             background: var(--dark-light);
-            padding: 0.8rem 0;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -72,19 +74,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
         
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
         }
         
         .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
+            position: relative;
         }
         
         .nav-links a {
@@ -93,7 +96,7 @@
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
-            font-size: 0.9rem;
+            padding: 0.5rem 0;
         }
         
         .nav-links a:hover {
@@ -115,6 +118,46 @@
             width: 100%;
         }
         
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--dark-light);
+            min-width: 250px;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1000;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+        
+        .dropdown-content a {
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        
+        .dropdown-content a:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
         .menu-toggle {
             display: none;
             background: none;
@@ -122,12 +165,11 @@
             color: var(--light);
             font-size: 1.5rem;
             cursor: pointer;
-            z-index: 101;
         }
         
         /* Sections générales */
         section {
-            padding: 2.5rem 1rem;
+            padding: 4rem 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -135,8 +177,8 @@
         section h2 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
             text-align: center;
             position: relative;
         }
@@ -147,7 +189,7 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 3px;
             background: linear-gradient(to right, var(--accent), var(--secondary));
         }
@@ -158,15 +200,15 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 4rem 1.5rem;
             background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" stroke="%233b82f6" stroke-width="2" fill="none" /><rect x="30" y="30" width="40" height="40" stroke="%238b5cf6" stroke-width="2" fill="none" /></svg>');
             background-size: cover;
         }
         
         .photo-profil {
-            margin-bottom: 1.5rem;
-            width: 150px;
-            height: 150px;
+            margin-bottom: 2rem;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid var(--primary);
@@ -185,7 +227,7 @@
         }
         
         .hero-content h2 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--light);
         }
@@ -198,8 +240,8 @@
         }
         
         .hero-content p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             color: var(--gray);
         }
         
@@ -214,14 +256,13 @@
             display: inline-block;
             background: linear-gradient(to right, var(--accent), var(--secondary));
             color: white;
-            padding: 10px 20px;
+            padding: 12px 30px;
             border: none;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-size: 0.9rem;
         }
         
         .cta:hover {
@@ -239,19 +280,19 @@
         .services {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 1.5rem auto;
+            margin: 2rem auto;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .service-card {
             background: rgba(30, 41, 59, 0.7);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
@@ -263,34 +304,33 @@
         }
         
         .service-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
         
         .service-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--light);
         }
         
         .service-card p {
             color: var(--gray);
-            font-size: 0.9rem;
         }
         
         /* Téléservices Section */
         .teleservices {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 1.5rem auto;
+            margin: 2rem auto;
         }
         
         .teleservices-intro {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -298,8 +338,8 @@
         
         .teleservices-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
         .teleservice-card {
@@ -316,32 +356,31 @@
         
         .teleservice-img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
         }
         
         .teleservice-content {
-            padding: 1.2rem;
+            padding: 1.5rem;
         }
         
         .teleservice-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             color: var(--light);
         }
         
         .teleservice-content p {
             color: var(--gray);
-            margin-bottom: 1.2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
         }
         
         /* Video Section */
         .video-section {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 1.5rem auto;
-            padding: 2rem 1rem;
+            margin: 2rem auto;
+            padding: 3rem 1.5rem;
             text-align: center;
         }
         
@@ -368,9 +407,9 @@
         
         .video-description {
             max-width: 800px;
-            margin: 1.5rem auto 0;
+            margin: 2rem auto 0;
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 1.1rem;
         }
         
         /* Portfolio Section */
@@ -378,43 +417,42 @@
             background: var(--dark-light);
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .portfolio-img {
             width: 100%;
-            height: 200px;
+            height: 300px;
             object-fit: cover;
         }
         
         .portfolio-content {
-            padding: 1.2rem;
+            padding: 1.5rem;
             text-align: center;
         }
         
         .portfolio-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--light);
         }
         
         .portfolio-content p {
             color: var(--gray);
-            margin-bottom: 1.2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
         }
         
         /* Testimonials */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
         .testimonial-card {
             background: var(--dark-light);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             position: relative;
         }
@@ -423,8 +461,8 @@
             content: '"';
             position: absolute;
             top: 10px;
-            left: 15px;
-            font-size: 3rem;
+            left: 20px;
+            font-size: 4rem;
             color: var(--primary);
             opacity: 0.2;
             font-family: 'Playfair Display', serif;
@@ -436,10 +474,9 @@
         }
         
         .testimonial-content p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             font-style: italic;
             color: var(--light);
-            font-size: 0.95rem;
         }
         
         .testimonial-author {
@@ -448,8 +485,8 @@
         }
         
         .testimonial-author img {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
@@ -460,33 +497,31 @@
         .author-info h4 {
             color: var(--light);
             margin-bottom: 0.2rem;
-            font-size: 1rem;
         }
         
         .author-info p {
             color: var(--gray);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             margin: 0;
         }
         
         /* Skills Section */
         .skills-container {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
         
         .skill-category {
             background: var(--dark-light);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             text-align: center;
         }
         
         .skill-category h3 {
             color: var(--primary);
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         
         .skills-list {
@@ -504,32 +539,28 @@
         }
         
         .skill-item img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
         }
         
         .skill-item span {
             color: var(--light);
-            font-size: 0.8rem;
-        }
-        
-        .skill-item i {
-            font-size: 2.2rem;
+            font-size: 0.9rem;
         }
         
         /* Websites Section */
         .websites-section {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 1.5rem auto;
+            margin: 2rem auto;
         }
         
         .websites-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
         
         .website-card {
@@ -546,32 +577,31 @@
         
         .website-img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
         }
         
         .website-content {
-            padding: 1.2rem;
+            padding: 1.5rem;
         }
         
         .website-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
             color: var(--light);
         }
         
         .website-content p {
             color: var(--gray);
-            margin-bottom: 1.2rem;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
         }
         
         /* ComeUp Section */
         .comeup-section {
             background: linear-gradient(135deg, var(--accent), var(--secondary));
             border-radius: 15px;
-            margin: 1.5rem auto;
-            padding: 2rem 1rem;
+            margin: 2rem auto;
+            padding: 3rem 1.5rem;
             text-align: center;
         }
         
@@ -582,26 +612,26 @@
         
         .comeup-content h2 {
             color: white;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         
         .comeup-content p {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
         
         /* Contact Section */
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
         
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.5rem;
         }
         
         .contact-method {
@@ -611,37 +641,34 @@
         }
         
         .contact-icon {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(to right, var(--accent), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            font-size: 1.2rem;
         }
         
         .contact-details h4 {
             color: var(--light);
             margin-bottom: 0.2rem;
-            font-size: 1rem;
         }
         
         .contact-details p {
             color: var(--gray);
-            font-size: 0.9rem;
         }
         
         .contact-form {
             background: var(--dark-light);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             position: relative;
         }
         
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             position: relative;
         }
         
@@ -650,21 +677,19 @@
             margin-bottom: 0.5rem;
             color: var(--light);
             font-weight: 500;
-            font-size: 0.9rem;
         }
         
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 10px 12px;
+            padding: 12px 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(15, 23, 42, 0.5);
             border-radius: 5px;
             color: var(--light);
             font-family: 'Montserrat', sans-serif;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
         }
         
         .form-group input:focus,
@@ -683,7 +708,7 @@
         
         .error-message {
             color: var(--error);
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             margin-top: 0.3rem;
             display: none;
         }
@@ -695,7 +720,7 @@
         .submit-btn {
             background: linear-gradient(to right, var(--accent), var(--secondary));
             color: white;
-            padding: 10px 20px;
+            padding: 12px 30px;
             border: none;
             border-radius: 5px;
             font-weight: 600;
@@ -708,7 +733,6 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            font-size: 0.9rem;
         }
         
         .submit-btn:hover {
@@ -718,8 +742,8 @@
         
         .submit-btn .spinner {
             display: none;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             border-top-color: white;
@@ -740,11 +764,10 @@
         
         .form-status {
             margin-top: 1rem;
-            padding: 8px;
+            padding: 10px;
             border-radius: 5px;
             text-align: center;
             display: none;
-            font-size: 0.9rem;
         }
         
         .form-status.success {
@@ -765,7 +788,7 @@
             gap: 0.5rem;
             background: #25D366;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
@@ -773,7 +796,6 @@
             transition: all 0.3s ease;
             width: 100%;
             justify-content: center;
-            font-size: 0.9rem;
         }
         
         .whatsapp-btn:hover {
@@ -786,24 +808,22 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            left: 20px;
-            padding: 12px 20px;
+            padding: 15px 25px;
             border-radius: 5px;
             color: white;
             font-weight: 500;
             z-index: 1000;
             opacity: 0;
-            transform: translateY(-100%);
+            transform: translateX(100%);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.9rem;
         }
         
         .notification.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
         
         .notification.success {
@@ -826,7 +846,6 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
-            padding: 1rem;
         }
         
         .modal.active {
@@ -836,19 +855,17 @@
         .modal-content {
             background: var(--dark-light);
             border-radius: 10px;
-            padding: 1.5rem;
+            padding: 2rem;
             max-width: 500px;
-            width: 100%;
+            width: 90%;
             position: relative;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            max-height: 90vh;
-            overflow-y: auto;
         }
         
         .modal-close {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             background: none;
             border: none;
             color: var(--light);
@@ -857,25 +874,23 @@
         }
         
         .modal-header {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         
         .modal-header h3 {
             color: var(--primary);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
         
         .modal-body {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: var(--gray);
-            font-size: 0.95rem;
         }
         
         .modal-footer {
             display: flex;
             justify-content: flex-end;
             gap: 1rem;
-            flex-wrap: wrap;
         }
         
         /* Trigger Button */
@@ -887,12 +902,12 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 999;
@@ -906,7 +921,7 @@
         /* Footer */
         footer {
             background: var(--dark-light);
-            padding: 2rem 1rem;
+            padding: 3rem 1.5rem;
             text-align: center;
         }
         
@@ -918,13 +933,13 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
-            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .social-links a {
             color: var(--light);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             transition: color 0.3s;
         }
         
@@ -935,8 +950,8 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
-            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
         
@@ -944,7 +959,6 @@
             color: var(--gray);
             text-decoration: none;
             transition: color 0.3s;
-            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -953,417 +967,287 @@
         
         .copyright {
             color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Nouvelles sections */
+        /* Compétences Python */
+        .python-section {
+            background: var(--dark-light);
+            border-radius: 15px;
+            margin: 2rem auto;
+        }
+        
+        .python-content {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .python-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .python-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .python-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .python-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--python);
+        }
+        
+        .python-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .python-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .python-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        /* Compétences C++ */
+        .cpp-section {
+            background: var(--dark-light);
+            border-radius: 15px;
+            margin: 2rem auto;
+        }
+        
+        .cpp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cpp-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .cpp-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cpp-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cpp);
+        }
+        
+        .cpp-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        /* Compétences Mathématiques */
+        .math-section {
+            background: var(--dark-light);
+            border-radius: 15px;
+            margin: 2rem auto;
+        }
+        
+        .math-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .math-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .math-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .math-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--math);
+        }
+        
+        /* Promotion badge */
+        .promo-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: 600;
         }
         
-        /* Responsive Design amélioré */
-        @media (min-width: 480px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            .photo-profil {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-            
-            section h2 {
-                font-size: 2rem;
-            }
-            
-            .services-grid,
-            .teleservices-grid,
-            .testimonials-grid,
-            .skills-container,
-            .websites-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
+        /* Section Formation */
+        .formation-section {
+            background: var(--dark-light);
+            border-radius: 15px;
+            margin: 2rem auto;
         }
         
-        @media (min-width: 768px) {
-            header {
-                padding: 1.5rem 0;
-            }
-            
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            header p {
-                font-size: 1.1rem;
-            }
-            
-            .nav-container {
-                padding: 0 1.5rem;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .nav-links {
-                gap: 1.5rem;
-            }
-            
-            .nav-links a {
-                font-size: 1rem;
-            }
-            
-            section {
-                padding: 4rem 1.5rem;
-            }
-            
-            section h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero {
-                padding: 4rem 1.5rem;
-            }
-            
-            .photo-profil {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            .cta {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-            
-            .services {
-                margin: 2rem auto;
-            }
-            
-            .services-grid {
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-            
-            .service-card {
-                padding: 2rem;
-            }
-            
-            .service-icon {
-                font-size: 2.5rem;
-            }
-            
-            .service-card h3 {
-                font-size: 1.5rem;
-            }
-            
-            .service-card p {
-                font-size: 1rem;
-            }
-            
-            .teleservices {
-                margin: 2rem auto;
-            }
-            
-            .teleservices-intro {
-                font-size: 1.1rem;
-                margin-bottom: 3rem;
-            }
-            
-            .teleservices-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-            }
-            
-            .teleservice-img {
-                height: 200px;
-            }
-            
-            .teleservice-content {
-                padding: 1.5rem;
-            }
-            
-            .teleservice-content h3 {
-                font-size: 1.3rem;
-            }
-            
-            .teleservice-content p {
-                font-size: 1rem;
-            }
-            
-            .video-section {
-                margin: 2rem auto;
-                padding: 3rem 1.5rem;
-            }
-            
-            .video-description {
-                font-size: 1.1rem;
-                margin: 2rem auto 0;
-            }
-            
-            .portfolio-img {
-                height: 300px;
-            }
-            
-            .portfolio-content {
-                padding: 1.5rem;
-            }
-            
-            .portfolio-content h3 {
-                font-size: 1.5rem;
-            }
-            
-            .portfolio-content p {
-                font-size: 1rem;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-            }
-            
-            .testimonial-card {
-                padding: 2rem;
-            }
-            
-            .testimonial-content p {
-                font-size: 1rem;
-            }
-            
-            .testimonial-author img {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .author-info h4 {
-                font-size: 1.1rem;
-            }
-            
-            .author-info p {
-                font-size: 0.9rem;
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-            }
-            
-            .skill-category {
-                padding: 2rem;
-            }
-            
-            .skill-category h3 {
-                font-size: 1.3rem;
-            }
-            
-            .skill-item img {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .skill-item span {
-                font-size: 0.9rem;
-            }
-            
-            .skill-item i {
-                font-size: 2.5rem;
-            }
-            
-            .websites-section {
-                margin: 2rem auto;
-            }
-            
-            .websites-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-            
-            .website-img {
-                height: 200px;
-            }
-            
-            .website-content {
-                padding: 1.5rem;
-            }
-            
-            .website-content h3 {
-                font-size: 1.3rem;
-            }
-            
-            .website-content p {
-                font-size: 1rem;
-            }
-            
-            .comeup-section {
-                margin: 2rem auto;
-                padding: 3rem 1.5rem;
-            }
-            
-            .comeup-content p {
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-            }
-            
-            .contact-container {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 3rem;
-            }
-            
-            .contact-method {
-                gap: 1rem;
-            }
-            
-            .contact-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-            
-            .contact-details h4 {
-                font-size: 1.1rem;
-            }
-            
-            .contact-details p {
-                font-size: 1rem;
-            }
-            
-            .contact-form {
-                padding: 2rem;
-            }
-            
-            .form-group {
-                margin-bottom: 1.5rem;
-            }
-            
-            .form-group label {
-                font-size: 1rem;
-            }
-            
-            .form-group input,
-            .form-group textarea,
-            .form-group select {
-                padding: 12px 15px;
-                font-size: 1rem;
-            }
-            
-            .error-message {
-                font-size: 0.8rem;
-            }
-            
-            .submit-btn {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-            
-            .form-status {
-                font-size: 1rem;
-            }
-            
-            .whatsapp-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            
-            .notification {
-                left: auto;
-                right: 20px;
-                left: auto;
-                max-width: 400px;
-                transform: translateX(100%);
-            }
-            
-            .notification.show {
-                transform: translateX(0);
-            }
-            
-            .modal-content {
-                padding: 2rem;
-            }
-            
-            .modal-close {
-                top: 15px;
-                right: 15px;
-            }
-            
-            .modal-header h3 {
-                font-size: 1.5rem;
-            }
-            
-            .modal-body {
-                font-size: 1rem;
-            }
-            
-            .trigger-button {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            footer {
-                padding: 3rem 1.5rem;
-            }
-            
-            .social-links {
-                gap: 1.5rem;
-            }
-            
-            .social-links a {
-                font-size: 1.5rem;
-            }
-            
-            .footer-links {
-                gap: 1.5rem;
-            }
-            
-            .footer-links a {
-                font-size: 1rem;
-            }
-            
-            .copyright {
-                font-size: 0.9rem;
-            }
+        .formation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
         
+        .formation-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+        
+        .formation-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .formation-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .formation-content {
+            padding: 1.5rem;
+        }
+        
+        .formation-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .formation-content p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .formation-topics {
+            margin: 1.5rem 0;
+        }
+        
+        .formation-topics h4 {
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .formation-topics ul {
+            color: var(--gray);
+            padding-left: 1.5rem;
+        }
+        
+        .formation-topics li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Ad blocker button */
+        .ad-blocker {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--dark-light);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        
+        .ad-blocker:hover {
+            transform: scale(1.1);
+        }
+        
+        .ad-blocker.active {
+            background: var(--success);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 flex-direction: column;
-                position: fixed;
-                top: 0;
+                position: absolute;
+                top: 100%;
                 left: 0;
                 right: 0;
-                bottom: 0;
                 background: var(--dark-light);
-                padding: 4rem 1.5rem 1.5rem;
+                padding: 1rem;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                z-index: 99;
-                overflow-y: auto;
             }
             
             .nav-links.active {
                 display: flex;
             }
             
-            .nav-links a {
-                padding: 1rem 0;
-                font-size: 1.1rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            .dropdown-content {
+                position: static;
+                display: none;
+                background: rgba(30, 41, 59, 0.5);
+                margin-left: 1rem;
+                margin-top: 0.5rem;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: flex;
             }
             
             .menu-toggle {
                 display: block;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
             }
             
             .cta-buttons {
@@ -1375,45 +1259,8 @@
                 padding: 1.5rem;
             }
             
-            .modal-footer {
-                flex-direction: column;
-            }
-            
-            .modal-footer .cta,
-            .modal-footer .cta.secondary {
-                width: 100%;
-                text-align: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content h2 {
-                font-size: 1.6rem;
-            }
-            
-            .contact-method {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-            
-            .contact-icon {
-                align-self: center;
-            }
-            
-            .testimonial-author {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-            
-            .testimonial-author img {
-                margin-right: 0;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 0.8rem;
+            .ad-blocker {
+                bottom: 160px;
             }
         }
     </style>
@@ -1433,6 +1280,18 @@
                 <a href="#about">À propos</a>
                 <a href="#services">Services</a>
                 <a href="#teleservices">Téléservices</a>
+                
+                <!-- Dropdown for Formations -->
+                <div class="dropdown">
+                    <a href="#formations">Formations <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#python">Python</a>
+                        <a href="#cpp">C++</a>
+                        <a href="#web-dev">Développement Web</a>
+                        <a href="#math">Mathématiques</a>
+                    </div>
+                </div>
+                
                 <a href="#video">Vidéo</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#skills">Compétences</a>
@@ -1532,11 +1391,292 @@
         </div>
     </section>
 
+    <!-- Compétences Python Section -->
+    <section id="python" class="python-section">
+        <h2>Compétences en Python</h2>
+        <p class="python-content">Je maîtrise les fondamentaux de la programmation en Python et propose des formations pour débutants souhaitant apprendre ce langage polyvalent et puissant.</p>
+        
+        <div class="python-grid">
+            <div class="python-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/python-5.svg" alt="Logo Python" class="python-logo">
+                <h3>Initiation au Langage</h3>
+                <p>Variables, types de données, structures de contrôle, fonctions et modules Python.</p>
+            </div>
+            
+            <div class="python-card">
+                <div class="python-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Bases de la Programmation</h3>
+                <p>Algorithmes fondamentaux, structures de données, manipulation de fichiers et gestion d'erreurs.</p>
+            </div>
+            
+            <div class="python-card">
+                <div class="python-icon">
+                    <i class="fas fa-object-group"></i>
+                </div>
+                <h3>Programmation Orientée Objet</h3>
+                <p>Classes, objets, héritage, polymorphisme, encapsulation et concepts avancés de POO en Python.</p>
+            </div>
+            
+            <div class="python-card">
+                <div class="python-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Applications Mathématiques</h3>
+                <p>Utilisation de Python pour résoudre des problèmes mathématiques et réaliser des calculs scientifiques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences C++ Section -->
+    <section id="cpp" class="cpp-section">
+        <h2>Compétences en C++</h2>
+        <p class="python-content">Je maîtrise les concepts fondamentaux de la programmation en C++ et propose des formations pour débutants souhaitant apprendre ce langage performant et polyvalent.</p>
+        
+        <div class="cpp-grid">
+            <div class="cpp-card">
+                <img src="https://cdn.worldvectorlogo.com/logos/c.svg" alt="Logo C++" class="cpp-logo">
+                <h3>Initiation au Langage</h3>
+                <p>Variables, types de données, opérateurs, structures de contrôle et fonctions en C++.</p>
+            </div>
+            
+            <div class="cpp-card">
+                <div class="cpp-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Bases de la Programmation</h3>
+                <p>Algorithmes fondamentaux, structures de données, pointeurs, références et gestion de la mémoire.</p>
+            </div>
+            
+            <div class="cpp-card">
+                <div class="cpp-icon">
+                    <i class="fas fa-object-group"></i>
+                </div>
+                <h3>Programmation Orientée Objet</h3>
+                <p>Classes, objets, héritage, polymorphisme, encapsulation et concepts avancés de POO en C++.</p>
+            </div>
+            
+            <div class="cpp-card">
+                <div class="cpp-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>Applications Système</h3>
+                <p>Utilisation de C++ pour développer des applications performantes et proches du matériel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Développement Web Section -->
+    <section id="web-dev" class="formation-section">
+        <h2>Formation Développement Web</h2>
+        <p class="python-content">Apprenez à créer des sites web modernes et performants, du frontend au backend, avec des techniques actuelles incluant l'utilisation de l'IA et des options gratuites pour démarrer.</p>
+        
+        <div class="formation-grid">
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formation Frontend" class="formation-img">
+                <div class="formation-content">
+                    <h3>Frontend Moderne</h3>
+                    <p>Maîtrisez HTML, CSS, JavaScript et les frameworks modernes pour créer des interfaces utilisateur attrayantes et réactives.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>HTML5 et CSS3 avancés</li>
+                            <li>JavaScript ES6+</li>
+                            <li>Responsive design</li>
+                            <li>Frameworks CSS (Bootstrap, Tailwind)</li>
+                            <li>Introduction aux frameworks JS (React, Vue)</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+            
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formation Backend" class="formation-img">
+                <div class="formation-content">
+                    <h3>Backend Performant</h3>
+                    <p>Apprenez à créer des APIs REST robustes et sécurisées avec Node.js, Express et les bases de données.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>Node.js, Express.js et Fastify</li>
+                            <li>Création d'APIs REST</li>
+                            <li>Bases de données (SQL et NoSQL)</li>
+                            <li>Authentification et autorisation</li>
+                            <li>Déploiement et performance</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+            
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formation IA" class="formation-img">
+                <div class="formation-content">
+                    <h3>IA et Développement Web</h3>
+                    <p>Découvrez comment utiliser l'intelligence artificielle pour vos applications web avec des fonctionnalités avancées.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>Introduction à l'IA pour le web</li>
+                            <li>API d'IA</li>
+                            <li>Outils no-code avec IA</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+            
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Options gratuites" class="formation-img">
+                <div class="formation-content">
+                    <h3>Options Gratuites</h3>
+                    <p>Découvrez comment créer un site web professionnel sans investissement initial avec des outils et ressources gratuits.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>Hébergement gratuit (GitHub Pages, Netlify, render)</li>
+                            
+                            <li>Outils de design gratuits</li>
+                            
+                            <li>Monétisation d'un site gratuit</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Mathématiques Section -->
+    <section id="math" class="math-section">
+        <h2>Compétences en Mathématiques</h2>
+        <p class="python-content">Étudiant en troisième année de Mathématiques à l'Université, je maîtrise les concepts fondamentaux et avancés des mathématiques et propose des cours particuliers pour tous les niveaux, du collège (6ème) au lycée (Terminale).</p>
+        
+        <div class="math-grid">
+            <div class="math-card">
+                <div class="promo-badge">1ère séance gratuite</div>
+                <div class="math-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Collège (6ème - 3ème)</h3>
+                <p>Nombres et calculs, géométrie, grandeurs et mesures, ...</p>
+            </div>
+            
+            <div class="math-card">
+                <div class="promo-badge">1ère séance gratuite</div>
+                <div class="math-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Seconde et Première</h3>
+                <p>Fonctions, géométrie, probabilités et statistiques, ...</p>
+            </div>
+            
+            <div class="math-card">
+                <div class="promo-badge">1ère séance gratuite</div>
+                <div class="math-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Terminale</h3>
+                <p>Fonctions exponentielles et logarithmes, calcul intégral, suites, probabilités, ...</p>
+            </div>
+            
+            <div class="math-card">
+                <div class="promo-badge">1ère séance gratuite</div>
+                <div class="math-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <h3>Supérieur</h3>
+                <p>Algèbre linéaire, analyse avancée, mathématiques discrètes, probabilités et statistiques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation Section -->
+    <section id="formation" class="formation-section">
+        <h2>Formations Proposées</h2>
+        <p class="python-content">Je propose des formations complètes pour ceux qui souhaitent apprendre la programmation Python, C++, le développement web ou renforcer leurs compétences en mathématiques.</p>
+        
+        <div class="formation-grid">
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formation Python" class="formation-img">
+                <div class="formation-content">
+                    <h3>Formation Python Complète</h3>
+                    <p>Apprenez la programmation Python depuis les bases jusqu'aux concepts avancés de la programmation orientée objet.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>Initiation au langage Python</li>
+                            <li>Bases de la programmation</li>
+                            <li>Structures de données</li>
+                            <li>Programmation orientée objet</li>
+                            <li>Applications pratiques</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+            
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formation C++" class="formation-img">
+                <div class="formation-content">
+                    <h3>Formation C++ Complète</h3>
+                    <p>Maîtrisez le langage C++ depuis les fondamentaux jusqu'aux concepts avancés de programmation système.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>Initiation au langage C++</li>
+                            <li>Bases de la programmation</li>
+                            <li>Gestion de la mémoire</li>
+                            <li>Programmation orientée objet</li>
+                            <li>Applications pratiques</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+            
+            <div class="formation-card">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formation Mathématiques" class="formation-img">
+                <div class="formation-content">
+                    <h3>Formation Mathématiques</h3>
+                    <p>Renforcez vos compétences en mathématiques avec des cours adaptés à votre niveau et à vos objectifs.</p>
+                    
+                    <div class="formation-topics">
+                        <h4>Contenu de la formation :</h4>
+                        <ul>
+                            <li>Algèbre linéaire</li>
+                            <li>Analyse mathématique</li>
+                            <li>Mathématiques discrètes</li>
+                            <li>Probabilités et statistiques</li>
+                            <li>Applications pratiques</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#contact" class="cta">S'inscrire à la formation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Section -->
     <section id="video" class="video-section">
         <h2>Présentation Vidéo</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/watch?v=YnWjki-M-7A&pp=ygUkc3VwYWJhc2UsIGZhc3RpZnksIGh0bWwsIGNzcywgbm9kZWpz" title="Développement Web Fullstack - Services et Expertise" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/YnWjki-M-7A" title="Développement Web Fullstack - Services et Expertise" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-description">
             <p>Découvrez en vidéo comment je peux vous aider à concrétiser vos projets web avec des solutions techniques robustes et performantes.</p>
@@ -1609,15 +1749,15 @@
                 <h3>Frontend</h3>
                 <div class="skills-list">
                     <div class="skill-item">
-                        <i class="fab fa-html5" style="color: #E34F26;"></i>
+                        <i class="fab fa-html5" style="font-size: 50px; color: #E34F26;"></i>
                         <span>HTML5</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                        <i class="fab fa-css3-alt" style="font-size: 50px; color: #1572B6;"></i>
                         <span>CSS3</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+                        <i class="fab fa-js-square" style="font-size: 50px; color: #F7DF1E;"></i>
                         <span>JavaScript</span>
                     </div>
                 </div>
@@ -1626,11 +1766,11 @@
                 <h3>Outils & Technologies</h3>
                 <div class="skills-list">
                     <div class="skill-item">
-                        <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                        <i class="fab fa-git-alt" style="font-size: 50px; color: #F05032;"></i>
                         <span>Git</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-database" style="color: #336791;"></i>
+                        <i class="fas fa-database" style="font-size: 50px; color: #336791;"></i>
                         <span>Bases de données</span>
                     </div>
                 </div>
@@ -1724,6 +1864,10 @@
                             <option value="api">API</option>
                             <option value="application">Application Web</option>
                             <option value="teleservice">Téléservice</option>
+                            <option value="formation-python">Formation Python</option>
+                            <option value="formation-cpp">Formation C++</option>
+                            <option value="formation-web">Formation Développement Web</option>
+                            <option value="formation-math">Formation Mathématiques</option>
                             <option value="cours">Cours de Mathématiques</option>
                             <option value="autre">Autre</option>
                         </select>
@@ -1754,7 +1898,7 @@
                 <h3>Services de Téléservices</h3>
             </div>
             <div class="modal-body">
-                <p>Besoin d'un soutien administrativ à distance? Je propose des services de téléconseil, télésécrétariat, saisie de données et gestion de CRM. Des solutions efficaces pour optimiser votre temps et booster votre productivité!</p>
+                <p>Besoin d'un soutien administrative à distance? Je propose des services de téléconseil, télésécrétariat, saisie de données et gestion de CRM. Des solutions efficaces pour optimiser votre temps et booster votre productivité!</p>
             </div>
             <div class="modal-footer">
                 <a href="#contact" class="cta">Me contacter</a>
@@ -1771,6 +1915,7 @@
             </div>
             <div class="modal-body">
                 <p>Renforcez vos compétences en mathématiques avec des cours particuliers adaptés à votre niveau. Alliant rigueur mathématique et pédagogie, je vous aide à maîtriser les concepts et à exceller dans cette discipline.</p>
+                <p><strong>Offre promotionnelle : Première séance gratuite pour tous les nouveaux élèves !</strong></p>
             </div>
             <div class="modal-footer">
                 <a href="#contact" class="cta">Me contacter</a>
@@ -1779,9 +1924,56 @@
         </div>
     </div>
 
+    <!-- Modal pour la formation Python et C++ -->
+    <div id="modalFormation" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>Formations en Programmation</h3>
+            </div>
+            <div class="modal-body">
+                <p>Vous souhaitez apprendre la programmation? Je propose des formations complètes en Python et C++ adaptées à tous les niveaux.</p>
+                <p><strong>Formation Python :</strong> Initiation au langage, bases de la programmation, programmation orientée objet</p>
+                <p><strong>Formation C++ :</strong> Initiation au langage, bases de la programmation, programmation orientée objet</p>
+                <p>Des cours particuliers et personnalisés pour progresser rapidement!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#formation" class="cta">Découvrir les formations</a>
+                <button class="cta secondary close-modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour la formation Développement Web -->
+    <div id="modalWebFormation" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>Formation Développement Web</h3>
+            </div>
+            <div class="modal-body">
+                <p>Apprenez à créer des sites web modernes et performants, du frontend au backend, avec des techniques actuelles incluant l'utilisation de l'IA.</p>
+                <p><strong>Formation Frontend :</strong> HTML, CSS, JavaScript, responsive design</p>
+                <p><strong>Formation Backend :</strong> Node.js, Express,Fastify, bases de données, APIs REST</p>
+                <p><strong>IA et Développement Web :</strong> Utilisation d'IA pour API rapides et stables</p>
+                <p><strong>Options Gratuites :</strong> Hébergement gratuit, outils no-code, ressources gratuites</p>
+                <p>Formation complète pour devenir développeur web fullstack!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#web-dev" class="cta">Découvrir la formation</a>
+                <button class="cta secondary close-modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Trigger Button -->
     <button id="triggerModals" class="trigger-button">
         <i class="fas fa-bullhorn"></i>
+    </button>
+
+    <!-- Ad blocker button -->
+    <button id="adBlocker" class="ad-blocker" title="Désactiver les publicités">
+        <i class="fas fa-ad"></i>
     </button>
 
     <!-- Notification -->
@@ -1801,6 +1993,11 @@
                 <a href="#about">À propos</a>
                 <a href="#services">Services</a>
                 <a href="#teleservices">Téléservices</a>
+                <a href="#python">Python</a>
+                <a href="#cpp">C++</a>
+                <a href="#web-dev">Développement Web</a>
+                <a href="#math">Mathématiques</a>
+                <a href="#formation">Formations</a>
                 <a href="#video">Vidéo</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
@@ -1816,8 +2013,6 @@
         // Menu toggle for mobile
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
-            this.querySelector('i').classList.toggle('fa-bars');
-            this.querySelector('i').classList.toggle('fa-times');
         });
 
         // Smooth scrolling for navigation links
@@ -1836,8 +2031,6 @@
                     
                     // Close mobile menu if open
                     document.querySelector('.nav-links').classList.remove('active');
-                    document.querySelector('.menu-toggle i').classList.add('fa-bars');
-                    document.querySelector('.menu-toggle i').classList.remove('fa-times');
                 }
             });
         });
@@ -1953,12 +2146,23 @@
         const modals = document.querySelectorAll('.modal');
         const modalTeleservices = document.getElementById('modalTeleservices');
         const modalMath = document.getElementById('modalMath');
+        const modalFormation = document.getElementById('modalFormation');
+        const modalWebFormation = document.getElementById('modalWebFormation');
         const triggerButton = document.getElementById('triggerModals');
+        const adBlocker = document.getElementById('adBlocker');
+        
+        // Check if ads are disabled in localStorage
+        let adsDisabled = localStorage.getItem('adsDisabled') === 'true';
+        if (adsDisabled) {
+            adBlocker.classList.add('active');
+        }
         
         // Function to open a modal
         function openModal(modal) {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            if (!adsDisabled) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
         
         // Function to close a modal
@@ -1976,8 +2180,32 @@
             });
         });
         
+        // Toggle ad blocker
+        adBlocker.addEventListener('click', () => {
+            adsDisabled = !adsDisabled;
+            localStorage.setItem('adsDisabled', adsDisabled);
+            
+            if (adsDisabled) {
+                adBlocker.classList.add('active');
+                showNotification('Publicités désactivées', 'success');
+                
+                // Close all open modals
+                modals.forEach(modal => {
+                    closeModal(modal);
+                });
+            } else {
+                adBlocker.classList.remove('active');
+                showNotification('Publicités activées', 'success');
+            }
+        });
+        
         // Trigger modals with the button
         triggerButton.addEventListener('click', () => {
+            if (adsDisabled) {
+                showNotification('Les publicités sont actuellement désactivées. Activez-les pour voir les promotions.', 'error');
+                return;
+            }
+            
             // Show teleservices modal first
             openModal(modalTeleservices);
             
@@ -1986,12 +2214,28 @@
                 closeModal(modalTeleservices);
                 setTimeout(() => {
                     openModal(modalMath);
+                    // After 5 seconds, close math and show formation modal
+                    setTimeout(() => {
+                        closeModal(modalMath);
+                        setTimeout(() => {
+                            openModal(modalFormation);
+                            // After 5 seconds, close formation and show web formation modal
+                            setTimeout(() => {
+                                closeModal(modalFormation);
+                                setTimeout(() => {
+                                    openModal(modalWebFormation);
+                                }, 300);
+                            }, 15000);
+                        }, 300);
+                    }, 15000);
                 }, 300);
-            }, 5000);
+            }, 15000);
         });
         
-        // Show modals on page load
+        // Show modals on page load if ads are not disabled
         window.addEventListener('load', () => {
+            if (adsDisabled) return;
+            
             setTimeout(() => {
                 openModal(modalTeleservices);
                 
@@ -2000,13 +2244,29 @@
                     closeModal(modalTeleservices);
                     setTimeout(() => {
                         openModal(modalMath);
+                        // After 5 seconds, close math and show formation modal
+                        setTimeout(() => {
+                            closeModal(modalMath);
+                            setTimeout(() => {
+                                openModal(modalFormation);
+                                // After 5 seconds, close formation and show web formation modal
+                                setTimeout(() => {
+                                    closeModal(modalFormation);
+                                    setTimeout(() => {
+                                        openModal(modalWebFormation);
+                                    }, 300);
+                                }, 15000);
+                            }, 300);
+                        }, 15000);
                     }, 300);
-                }, 20000);
+                }, 15000);
             }, 2000);
         });
         
-        // Show modals every 3 minutes
+        // Show modals every 3 minutes if ads are not disabled
         setInterval(() => {
+            if (adsDisabled) return;
+            
             openModal(modalTeleservices);
             
             // After 5 seconds, close teleservices and show math modal
@@ -2014,9 +2274,35 @@
                 closeModal(modalTeleservices);
                 setTimeout(() => {
                     openModal(modalMath);
+                    // After 5 seconds, close math and show formation modal
+                    setTimeout(() => {
+                        closeModal(modalMath);
+                        setTimeout(() => {
+                            openModal(modalFormation);
+                            // After 5 seconds, close formation and show web formation modal
+                            setTimeout(() => {
+                                closeModal(modalFormation);
+                                setTimeout(() => {
+                                    openModal(modalWebFormation);
+                                }, 300);
+                            }, 15000);
+                        }, 300);
+                    }, 15000);
                 }, 300);
-            }, 5000);
+            }, 15000);
         }, 180000); // 3 minutes = 180000 milliseconds
+
+        // Mobile dropdown handling
+        if (window.innerWidth <= 768) {
+            const dropdowns = document.querySelectorAll('.dropdown > a');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>
