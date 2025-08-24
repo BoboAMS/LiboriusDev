@@ -32,12 +32,13 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            font-size: 16px;
         }
         
         /* Header & Navigation */
         header {
             background: linear-gradient(135deg, var(--accent), var(--secondary));
-            padding: 1.5rem 0;
+            padding: 1.5rem 1rem;
             text-align: center;
             position: relative;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -45,20 +46,20 @@
         
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             letter-spacing: 1px;
         }
         
         header p {
             margin: 0.5rem 0 0;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             opacity: 0.9;
         }
         
         nav {
             background: var(--dark-light);
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -71,19 +72,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
         }
         
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary);
         }
         
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         
         .nav-links a {
@@ -92,6 +93,7 @@
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
+            font-size: 0.9rem;
         }
         
         .nav-links a:hover {
@@ -120,11 +122,12 @@
             color: var(--light);
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 101;
         }
         
         /* Sections générales */
         section {
-            padding: 4rem 1.5rem;
+            padding: 2.5rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -132,8 +135,8 @@
         section h2 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             position: relative;
         }
@@ -144,7 +147,7 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
             background: linear-gradient(to right, var(--accent), var(--secondary));
         }
@@ -155,15 +158,15 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 4rem 1.5rem;
+            padding: 2.5rem 1rem;
             background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="40" stroke="%233b82f6" stroke-width="2" fill="none" /><rect x="30" y="30" width="40" height="40" stroke="%238b5cf6" stroke-width="2" fill="none" /></svg>');
             background-size: cover;
         }
         
         .photo-profil {
-            margin-bottom: 2rem;
-            width: 200px;
-            height: 200px;
+            margin-bottom: 1.5rem;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid var(--primary);
@@ -182,7 +185,7 @@
         }
         
         .hero-content h2 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
             color: var(--light);
         }
@@ -195,8 +198,8 @@
         }
         
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--gray);
         }
         
@@ -211,13 +214,14 @@
             display: inline-block;
             background: linear-gradient(to right, var(--accent), var(--secondary));
             color: white;
-            padding: 12px 30px;
+            padding: 10px 20px;
             border: none;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
         }
         
         .cta:hover {
@@ -235,19 +239,19 @@
         .services {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
         }
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
         
         .service-card {
             background: rgba(30, 41, 59, 0.7);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
             transition: transform 0.3s ease;
@@ -259,33 +263,34 @@
         }
         
         .service-icon {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--light);
         }
         
         .service-card p {
             color: var(--gray);
+            font-size: 0.9rem;
         }
         
         /* Téléservices Section */
         .teleservices {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
         }
         
         .teleservices-intro {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
@@ -293,8 +298,8 @@
         
         .teleservices-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .teleservice-card {
@@ -311,31 +316,32 @@
         
         .teleservice-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         
         .teleservice-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
         
         .teleservice-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: var(--light);
         }
         
         .teleservice-content p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
         }
         
         /* Video Section */
         .video-section {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 2rem auto;
-            padding: 3rem 1.5rem;
+            margin: 1.5rem auto;
+            padding: 2rem 1rem;
             text-align: center;
         }
         
@@ -362,9 +368,9 @@
         
         .video-description {
             max-width: 800px;
-            margin: 2rem auto 0;
+            margin: 1.5rem auto 0;
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
         
         /* Portfolio Section */
@@ -372,41 +378,43 @@
             background: var(--dark-light);
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .portfolio-img {
             width: 100%;
-            height: 300px;
+            height: 200px;
             object-fit: cover;
         }
         
         .portfolio-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
+            text-align: center;
         }
         
         .portfolio-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             color: var(--light);
         }
         
         .portfolio-content p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
         }
         
         /* Testimonials */
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .testimonial-card {
             background: var(--dark-light);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             position: relative;
         }
@@ -415,8 +423,8 @@
             content: '"';
             position: absolute;
             top: 10px;
-            left: 20px;
-            font-size: 4rem;
+            left: 15px;
+            font-size: 3rem;
             color: var(--primary);
             opacity: 0.2;
             font-family: 'Playfair Display', serif;
@@ -428,9 +436,10 @@
         }
         
         .testimonial-content p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-style: italic;
             color: var(--light);
+            font-size: 0.95rem;
         }
         
         .testimonial-author {
@@ -439,8 +448,8 @@
         }
         
         .testimonial-author img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
@@ -451,31 +460,33 @@
         .author-info h4 {
             color: var(--light);
             margin-bottom: 0.2rem;
+            font-size: 1rem;
         }
         
         .author-info p {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin: 0;
         }
         
         /* Skills Section */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .skill-category {
             background: var(--dark-light);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
+            text-align: center;
         }
         
         .skill-category h3 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
-            text-align: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
         }
         
         .skills-list {
@@ -493,28 +504,32 @@
         }
         
         .skill-item img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             object-fit: contain;
         }
         
         .skill-item span {
             color: var(--light);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+        }
+        
+        .skill-item i {
+            font-size: 2.2rem;
         }
         
         /* Websites Section */
         .websites-section {
             background: var(--dark-light);
             border-radius: 15px;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
         }
         
         .websites-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
         
         .website-card {
@@ -531,31 +546,32 @@
         
         .website-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
         
         .website-content {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
         
         .website-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
             color: var(--light);
         }
         
         .website-content p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
         }
         
         /* ComeUp Section */
         .comeup-section {
             background: linear-gradient(135deg, var(--accent), var(--secondary));
             border-radius: 15px;
-            margin: 2rem auto;
-            padding: 3rem 1.5rem;
+            margin: 1.5rem auto;
+            padding: 2rem 1rem;
             text-align: center;
         }
         
@@ -566,26 +582,26 @@
         
         .comeup-content h2 {
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .comeup-content p {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
         
         /* Contact Section */
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
         
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
         
         .contact-method {
@@ -595,52 +611,60 @@
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(to right, var(--accent), var(--secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
         
         .contact-details h4 {
             color: var(--light);
             margin-bottom: 0.2rem;
+            font-size: 1rem;
         }
         
         .contact-details p {
             color: var(--gray);
+            font-size: 0.9rem;
         }
         
         .contact-form {
             background: var(--dark-light);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             position: relative;
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+            position: relative;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--light);
+            font-weight: 500;
+            font-size: 0.9rem;
         }
         
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 12px;
+            padding: 10px 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(15, 23, 42, 0.5);
             border-radius: 5px;
             color: var(--light);
             font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .form-group input:focus,
@@ -648,12 +672,30 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border-color: var(--error);
+        }
+        
+        .error-message {
+            color: var(--error);
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+        
+        .form-group.error .error-message {
+            display: block;
         }
         
         .submit-btn {
             background: linear-gradient(to right, var(--accent), var(--secondary));
             color: white;
-            padding: 12px 30px;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-weight: 600;
@@ -661,6 +703,12 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
         }
         
         .submit-btn:hover {
@@ -670,13 +718,12 @@
         
         .submit-btn .spinner {
             display: none;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             border-top-color: white;
             animation: spin 1s ease-in-out infinite;
-            margin-right: 10px;
         }
         
         @keyframes spin {
@@ -684,7 +731,32 @@
         }
         
         .submit-btn.loading .spinner {
-            display: inline-block;
+            display: block;
+        }
+        
+        .submit-btn.loading .btn-text {
+            display: none;
+        }
+        
+        .form-status {
+            margin-top: 1rem;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+            font-size: 0.9rem;
+        }
+        
+        .form-status.success {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            display: block;
+        }
+        
+        .form-status.error {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: var(--error);
+            display: block;
         }
         
         .whatsapp-btn {
@@ -693,12 +765,15 @@
             gap: 0.5rem;
             background: #25D366;
             color: white;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             margin-top: 1rem;
             transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+            font-size: 0.9rem;
         }
         
         .whatsapp-btn:hover {
@@ -711,22 +786,24 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            padding: 15px 25px;
+            left: 20px;
+            padding: 12px 20px;
             border-radius: 5px;
             color: white;
             font-weight: 500;
             z-index: 1000;
             opacity: 0;
-            transform: translateX(100%);
+            transform: translateY(-100%);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 0.9rem;
         }
         
         .notification.show {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
         
         .notification.success {
@@ -749,6 +826,7 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
+            padding: 1rem;
         }
         
         .modal.active {
@@ -758,17 +836,19 @@
         .modal-content {
             background: var(--dark-light);
             border-radius: 10px;
-            padding: 2rem;
+            padding: 1.5rem;
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             position: relative;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .modal-close {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 10px;
+            right: 10px;
             background: none;
             border: none;
             color: var(--light);
@@ -777,23 +857,25 @@
         }
         
         .modal-header {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .modal-header h3 {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         
         .modal-body {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--gray);
+            font-size: 0.95rem;
         }
         
         .modal-footer {
             display: flex;
             justify-content: flex-end;
             gap: 1rem;
+            flex-wrap: wrap;
         }
         
         /* Trigger Button */
@@ -805,12 +887,12 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             z-index: 999;
@@ -824,7 +906,7 @@
         /* Footer */
         footer {
             background: var(--dark-light);
-            padding: 3rem 1.5rem;
+            padding: 2rem 1rem;
             text-align: center;
         }
         
@@ -836,13 +918,13 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
         }
         
         .social-links a {
             color: var(--light);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: color 0.3s;
         }
         
@@ -853,8 +935,8 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
         
@@ -862,6 +944,7 @@
             color: var(--gray);
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -870,33 +953,417 @@
         
         .copyright {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
-        /* Responsive Design */
+        /* Responsive Design amélioré */
+        @media (min-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .photo-profil {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid,
+            .teleservices-grid,
+            .testimonials-grid,
+            .skills-container,
+            .websites-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (min-width: 768px) {
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .nav-links a {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            section h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .photo-profil {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .cta {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .services {
+                margin: 2rem auto;
+            }
+            
+            .services-grid {
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+            
+            .service-icon {
+                font-size: 2.5rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .service-card p {
+                font-size: 1rem;
+            }
+            
+            .teleservices {
+                margin: 2rem auto;
+            }
+            
+            .teleservices-intro {
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
+            }
+            
+            .teleservices-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+            
+            .teleservice-img {
+                height: 200px;
+            }
+            
+            .teleservice-content {
+                padding: 1.5rem;
+            }
+            
+            .teleservice-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .teleservice-content p {
+                font-size: 1rem;
+            }
+            
+            .video-section {
+                margin: 2rem auto;
+                padding: 3rem 1.5rem;
+            }
+            
+            .video-description {
+                font-size: 1.1rem;
+                margin: 2rem auto 0;
+            }
+            
+            .portfolio-img {
+                height: 300px;
+            }
+            
+            .portfolio-content {
+                padding: 1.5rem;
+            }
+            
+            .portfolio-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .portfolio-content p {
+                font-size: 1rem;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+            
+            .testimonial-card {
+                padding: 2rem;
+            }
+            
+            .testimonial-content p {
+                font-size: 1rem;
+            }
+            
+            .testimonial-author img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .author-info h4 {
+                font-size: 1.1rem;
+            }
+            
+            .author-info p {
+                font-size: 0.9rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+            
+            .skill-category {
+                padding: 2rem;
+            }
+            
+            .skill-category h3 {
+                font-size: 1.3rem;
+            }
+            
+            .skill-item img {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .skill-item span {
+                font-size: 0.9rem;
+            }
+            
+            .skill-item i {
+                font-size: 2.5rem;
+            }
+            
+            .websites-section {
+                margin: 2rem auto;
+            }
+            
+            .websites-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .website-img {
+                height: 200px;
+            }
+            
+            .website-content {
+                padding: 1.5rem;
+            }
+            
+            .website-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .website-content p {
+                font-size: 1rem;
+            }
+            
+            .comeup-section {
+                margin: 2rem auto;
+                padding: 3rem 1.5rem;
+            }
+            
+            .comeup-content p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 3rem;
+            }
+            
+            .contact-method {
+                gap: 1rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .contact-details h4 {
+                font-size: 1.1rem;
+            }
+            
+            .contact-details p {
+                font-size: 1rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+            
+            .form-group label {
+                font-size: 1rem;
+            }
+            
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+            
+            .error-message {
+                font-size: 0.8rem;
+            }
+            
+            .submit-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .form-status {
+                font-size: 1rem;
+            }
+            
+            .whatsapp-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .notification {
+                left: auto;
+                right: 20px;
+                left: auto;
+                max-width: 400px;
+                transform: translateX(100%);
+            }
+            
+            .notification.show {
+                transform: translateX(0);
+            }
+            
+            .modal-content {
+                padding: 2rem;
+            }
+            
+            .modal-close {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .modal-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .modal-body {
+                font-size: 1rem;
+            }
+            
+            .trigger-button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            footer {
+                padding: 3rem 1.5rem;
+            }
+            
+            .social-links {
+                gap: 1.5rem;
+            }
+            
+            .social-links a {
+                font-size: 1.5rem;
+            }
+            
+            .footer-links {
+                gap: 1.5rem;
+            }
+            
+            .footer-links a {
+                font-size: 1rem;
+            }
+            
+            .copyright {
+                font-size: 0.9rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 0;
                 left: 0;
                 right: 0;
+                bottom: 0;
                 background: var(--dark-light);
-                padding: 1rem;
+                padding: 4rem 1.5rem 1.5rem;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+                overflow-y: auto;
             }
             
             .nav-links.active {
                 display: flex;
             }
             
-            .menu-toggle {
-                display: block;
+            .nav-links a {
+                padding: 1rem 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
             
-            .hero-content h2 {
-                font-size: 2rem;
+            .menu-toggle {
+                display: block;
             }
             
             .cta-buttons {
@@ -906,6 +1373,47 @@
             
             .modal-content {
                 padding: 1.5rem;
+            }
+            
+            .modal-footer {
+                flex-direction: column;
+            }
+            
+            .modal-footer .cta,
+            .modal-footer .cta.secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .contact-icon {
+                align-self: center;
+            }
+            
+            .testimonial-author {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .testimonial-author img {
+                margin-right: 0;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
             }
         }
     </style>
@@ -1039,11 +1547,11 @@
     <section id="portfolio">
         <h2>Mes Réalisations</h2>
         <div class="portfolio-item">
-            <img src="c.png" class="portfolio-img">
+            <img src="c.png" alt="MiaTpNotes" class="portfolio-img">
             <div class="portfolio-content">
                 <h3>MiaTpNotes</h3>
                 <p>Plateforme de gestion et consultation des notes de TP pour la Faculté des Sciences et Techniques de l'Université d'Abomey-Calavi.</p>
-                <!--<a href="#" class="cta">Voir la démo</a>->
+                <!--<a href="#" class="cta">Voir la démo</a>-->
             </div>
         </div>
     </section>
@@ -1101,15 +1609,15 @@
                 <h3>Frontend</h3>
                 <div class="skills-list">
                     <div class="skill-item">
-                        <i class="fab fa-html5" style="font-size: 50px; color: #E34F26;"></i>
+                        <i class="fab fa-html5" style="color: #E34F26;"></i>
                         <span>HTML5</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-css3-alt" style="font-size: 50px; color: #1572B6;"></i>
+                        <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
                         <span>CSS3</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fab fa-js-square" style="font-size: 50px; color: #F7DF1E;"></i>
+                        <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
                         <span>JavaScript</span>
                     </div>
                 </div>
@@ -1118,11 +1626,11 @@
                 <h3>Outils & Technologies</h3>
                 <div class="skills-list">
                     <div class="skill-item">
-                        <i class="fab fa-git-alt" style="font-size: 50px; color: #F05032;"></i>
+                        <i class="fab fa-git-alt" style="color: #F05032;"></i>
                         <span>Git</span>
                     </div>
                     <div class="skill-item">
-                        <i class="fas fa-database" style="font-size: 50px; color: #336791;"></i>
+                        <i class="fas fa-database" style="color: #336791;"></i>
                         <span>Bases de données</span>
                     </div>
                 </div>
@@ -1197,18 +1705,20 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form id="contactForm">
+                <form id="contactForm" method="post" action="/api/contact">
                     <div class="form-group">
-                        <label for="name">Nom complet</label>
+                        <label for="name">Nom complet *</label>
                         <input type="text" id="name" name="name" required>
+                        <div class="error-message">Veuillez saisir votre nom complet</div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Adresse email</label>
+                        <label for="email">Adresse email *</label>
                         <input type="email" id="email" name="email" required>
+                        <div class="error-message">Veuillez saisir une adresse email valide</div>
                     </div>
                     <div class="form-group">
                         <label for="project-type">Type de projet</label>
-                        <select id="project-type" name="project-type">
+                        <select id="project-type" name="projectType">
                             <option value="">Sélectionnez une option</option>
                             <option value="site-web">Site Web</option>
                             <option value="api">API</option>
@@ -1219,13 +1729,15 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message">Message *</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
+                        <div class="error-message">Veuillez saisir votre message</div>
                     </div>
                     <button type="submit" class="submit-btn">
                         <span class="spinner"></span>
                         <span class="btn-text">Envoyer le message</span>
                     </button>
+                    <div id="formStatus" class="form-status"></div>
                 </form>
                 <a href="https://wa.me/2290159676267" class="whatsapp-btn">
                     <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
@@ -1242,7 +1754,7 @@
                 <h3>Services de Téléservices</h3>
             </div>
             <div class="modal-body">
-                <p>Besoin d'un soutien administratif à distance? Je propose des services de téléconseil, télésécrétariat, saisie de données et gestion de CRM. Des solutions efficaces pour optimiser votre temps et booster votre productivité!</p>
+                <p>Besoin d'un soutien administrativ à distance? Je propose des services de téléconseil, télésécrétariat, saisie de données et gestion de CRM. Des solutions efficaces pour optimiser votre temps et booster votre productivité!</p>
             </div>
             <div class="modal-footer">
                 <a href="#contact" class="cta">Me contacter</a>
@@ -1304,6 +1816,8 @@
         // Menu toggle for mobile
         document.querySelector('.menu-toggle').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
         });
 
         // Smooth scrolling for navigation links
@@ -1322,45 +1836,105 @@
                     
                     // Close mobile menu if open
                     document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelector('.menu-toggle i').classList.add('fa-bars');
+                    document.querySelector('.menu-toggle i').classList.remove('fa-times');
                 }
             });
         });
 
-        // Form submission with animation
+        // Form submission with improved validation and feedback
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Reset error states
+            const formGroups = this.querySelectorAll('.form-group');
+            formGroups.forEach(group => group.classList.remove('error'));
+            
+            // Basic validation
+            let isValid = true;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            if (!nameInput.value.trim()) {
+                nameInput.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
+                emailInput.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            if (!messageInput.value.trim()) {
+                messageInput.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                showNotification('Veuillez remplir correctement tous les champs obligatoires.', 'error');
+                return;
+            }
+            
             const submitBtn = this.querySelector('.submit-btn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                projectType: document.getElementById('project-type').value,
-                message: document.getElementById('message').value
-            };
+            const formStatus = document.getElementById('formStatus');
             
             // Show loading state
             submitBtn.classList.add('loading');
-            btnText.textContent = 'Envoi en cours...';
+            formStatus.className = 'form-status';
+            formStatus.textContent = '';
             
             try {
-                // Simulate API call (replace with actual fetch to your Fastify backend)
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // Create form data
+                const formData = new FormData(this);
                 
-                // Show success notification
-                showNotification('Message envoyé avec succès ! Je vous répondrai très rapidement.', 'success');
+                // Send form data to server
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                });
                 
-                // Reset form
-                this.reset();
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Show success message and reset form
+                    formStatus.textContent = 'Message envoyé avec succès !';
+                    formStatus.classList.add('success');
+                    
+                    // Show notification
+                    showNotification('Message envoyé avec succès ! Je vous répondrai très rapidement.', 'success');
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Reload page after a short delay to show the success state
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    throw new Error(result.message || 'Erreur lors de l\'envoi du message');
+                }
             } catch (error) {
+                // Show error message
+                formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+                formStatus.classList.add('error');
+                
                 // Show error notification
-                showNotification('Une erreur est survenue. Veuillez réessayer.', 'error');
+                showNotification('Erreur: ' + error.message, 'error');
             } finally {
                 // Reset button state
                 submitBtn.classList.remove('loading');
-                btnText.textContent = 'Envoyer le message';
             }
         });
+
+        // Email validation function
+        function isValidEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
 
         // Notification function
         function showNotification(message, type) {
@@ -1427,7 +2001,7 @@
                     setTimeout(() => {
                         openModal(modalMath);
                     }, 300);
-                }, 5000);
+                }, 20000);
             }, 2000);
         });
         
